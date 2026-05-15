@@ -29,4 +29,4 @@
    python3 main.py
    ```
 
-> Authorized penetration testing use only.
+> Security testing only. Use this tool only on systems you own or have explicit written permission to test. Unauthorized use may be illegal and can result in legal consequences.
