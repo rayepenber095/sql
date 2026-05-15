@@ -1,5 +1,7 @@
 # SQLi Engine
 
+> Security testing only. Use this tool only on systems you own or have explicit written permission to test. Unauthorized use may be illegal and can result in legal consequences.
+
 ## How to run this application
 
 ### Option 1: Install on Kali Linux (recommended)
@@ -28,5 +30,3 @@
    ```bash
    python3 main.py
    ```
-
-> Security testing only. Use this tool only on systems you own or have explicit written permission to test. Unauthorized use may be illegal and can result in legal consequences.
