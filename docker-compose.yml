@@ -9,7 +9,7 @@ services:
       QT_QPA_PLATFORM: xcb
       QT_X11_NO_MITSHM: "1"
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - sqli-db:/app/db
       - sqli-exports:/app/exports
 

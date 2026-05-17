@@ -20,6 +20,7 @@
    ```bash
    xhost +SI:localuser:root
    ```
+   This grants GUI access to local root processes, so only keep it enabled while you are using this container.
 2. Build and run:
    ```bash
    docker compose up --build
