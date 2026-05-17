@@ -16,9 +16,9 @@
     ```
 
 ### Option 2: Run with Docker on Kali Linux
-1. Allow local Docker containers to use your X server:
+1. Allow the local root user (container default user) to use your X server:
    ```bash
-   xhost +local:docker
+   xhost +SI:localuser:root
    ```
 2. Build and run:
    ```bash
@@ -30,7 +30,7 @@
    ```
 4. (Optional) Revoke X access:
    ```bash
-   xhost -local:docker
+   xhost -SI:localuser:root
    ```
 
 ### Option 3: Run directly from source
