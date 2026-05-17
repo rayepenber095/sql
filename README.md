@@ -11,11 +11,30 @@
    sudo bash install.sh
    ```
 3. Start the app:
+    ```bash
+    sqli-engine
+    ```
+
+### Option 2: Run with Docker on Kali Linux
+1. Allow the local root user (container default user) to use your X server:
    ```bash
-   sqli-engine
+   xhost +SI:localuser:root
+   ```
+   This grants GUI access to local root processes, so only keep it enabled while you are using this container.
+2. Build and run:
+   ```bash
+   docker compose up --build
+   ```
+3. When done, stop the container:
+   ```bash
+   docker compose down
+   ```
+4. (Optional) Revoke X access:
+   ```bash
+   xhost -SI:localuser:root
    ```
 
-### Option 2: Run directly from source
+### Option 3: Run directly from source
 1. Open a terminal in the project directory.
 2. Create and activate a virtual environment:
    ```bash
